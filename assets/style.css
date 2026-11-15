@@ -152,11 +152,17 @@ a:hover > .arr, .tlink:hover .arr, a:hover .tlink .arr, a:hover .btn .arr { tran
 .gauge span { position: absolute; left: 0; top: 3px; height: 3px; width: var(--w); background: var(--metal); transform-origin: 0 50%; transform: scaleX(0); transition: transform 1.3s var(--ease) .2s; }
 .in .gauge span { transform: none; }
 .sub-display { font-family: var(--disp); font-stretch: 104%; font-weight: 800; text-transform: uppercase; font-size: clamp(1.05rem, 1.5vw, 1.3rem); letter-spacing: .01em; margin: clamp(46px, 8vh, 80px) 0 20px; }
-.quals { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line-2); border-left: 1px solid var(--line); }
-.qual { padding: 20px 18px 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background-color .4s; }
-.qual:hover { background: rgba(198, 164, 92, .06); }
-.qual h4 { font-family: var(--disp); font-stretch: 102%; font-weight: 700; font-size: .98rem; color: var(--gold-hi); margin-bottom: 6px; }
-.qual p { color: var(--mute); font-size: .86rem; line-height: 1.5; }
+.quals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+/* cases pleines, dans une teinte bronze : elles se détachent du fond de la section */
+.qual { position: relative; padding: 20px 18px 22px; background: linear-gradient(160deg, #40331a 0%, #2a2110 100%); border: 1px solid rgba(198, 164, 92, .38); isolation: isolate; overflow: hidden; transition: border-color .4s, transform .5s var(--ease); }
+.qual::before { content: ""; position: absolute; inset: 0; background: var(--metal); transform: translateY(101%); transition: transform .5s var(--ease); z-index: -1; }
+.qual:hover { border-color: var(--gold-hi); transform: translateY(-3px); }
+.qual:hover::before { transform: none; }
+.qual h4 { display: flex; align-items: center; gap: 9px; font-family: var(--mono); font-weight: 500; font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: #f6ecd2; margin-bottom: 10px; transition: color .4s; }
+.qual h4::before { content: ""; width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); flex: none; transition: background-color .4s; }
+.qual p { font-family: var(--disp); font-stretch: 100%; font-weight: 400; color: #ddd2b8; font-size: .9rem; line-height: 1.45; transition: color .4s; }
+.qual:hover h4, .qual:hover p { color: #17130a; }
+.qual:hover h4::before { background: #17130a; }
 
 /* ---------------- parcours : défilement horizontal, étapes sur deux hauteurs */
 .hscroll { position: relative; }
