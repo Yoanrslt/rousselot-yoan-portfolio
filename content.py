@@ -499,7 +499,7 @@ PAGES = [
         "cover": "usmb-presidence.jpg", "cover_class": "wide",
         "gallery": [],
         "fr": {
-            "title": "Licence STAPS – Ergonomie et Performance Sportive",
+            "title": "Licence STAPS – Ergonomie du sport et performance motrice",
             "short": "Licence STAPS",
             "org": "Université Savoie Mont Blanc · année d'échange à l'Université Laval",
             "place": "Chambéry · Québec",
@@ -514,7 +514,7 @@ PAGES = [
             "skills": ["Physiologie", "Biomécanique", "Protocoles expérimentaux", "Collecte de données", "Recherche", "Adaptabilité"],
         },
         "en": {
-            "title": "BSc in Sport Science – Ergonomics and Sports Performance",
+            "title": "BSc in Sport Science – Sport Ergonomics and Motor Performance",
             "short": "BSc Sport Science",
             "org": "Université Savoie Mont Blanc · exchange year at Université Laval",
             "place": "Chambéry, France · Quebec City, Canada",
