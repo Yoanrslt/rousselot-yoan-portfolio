@@ -53,6 +53,10 @@ def sec_head(num, title, note=""):
             f'<h2 class="sec-title">{lines(e(title))}</h2>{note_html}</header>')
 
 
+import hashlib  # noqa: E402
+with open(os.path.join(HERE, "assets", "img", "portrait.webp"), "rb") as _fh:
+    PORTRAIT_V = hashlib.md5(_fh.read()).hexdigest()[:8]
+
 ARROW = '<svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>'
 
 # ------------------------------------------------------------------ hero
@@ -73,7 +77,7 @@ hero = f"""
       <span class="line n2"><span>Rousselot</span></span>
     </h1>
     <figure class="hero-portrait" aria-hidden="true">
-      <img src="assets/img/portrait.webp" alt="" width="1100" height="1348">
+      <img src="assets/img/portrait.webp?v={PORTRAIT_V}" alt="" width="1100" height="1467">
     </figure>
     <p class="tagline rv">De sous-officier de gendarmerie <em>à l'ingénierie biomédicale.</em></p>
     <div class="hero-foot">
